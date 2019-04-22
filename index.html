@@ -7,18 +7,48 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<style>
 			body {
-				background-color: white;
+				background-color: #EEEEEE;
 				margin: 0;
 				padding: 0;
 				border: 0;
 			} 
 
 			#page {
-				background-color: white;
+				background-color: #EEEEEE;
 				width: 50%;
 				margin: auto;
 				
-				padding: 10px;
+				padding: 5px;
+			}
+
+			.codeSection {
+				width: 20em;
+				height: 20em;
+				background-color: white;
+				display: inline-block;
+				margin: 10px;
+				box-shadow: 0px 0px 2px grey;
+			}
+
+			.codeSection:hover {
+				box-shadow: 0px 0px 40px grey;
+
+			}
+
+			a:hover {
+				text-decoration: none;
+				color: black;
+				
+			}
+
+			a {
+				color: black;
+				
+			}
+
+			a:visited {
+				color: black;
+				
 			}
 
 		
@@ -26,8 +56,8 @@
 	</head>
 
 	<body>
-
-		<nav class="navbar navbar-default">
+		
+		<nav class="navbar navbar-default" >
 			<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Class Code</a>
@@ -42,17 +72,35 @@
 			</ul>
 			</div>
 		</nav>
-			
-		<div class="container">
-			<h3>Basic Navbar Example</h3>
-			<p>A navigation bar is a navigation header that is placed at the top of the page.</p>
-		</div>
+		
 	  
 		<div id="page">
-			<br>
-			<h1 style="text-align: center;"> Class Code </h1>
+			<a target="_blank" href="https://codesandbox.io/embed/18202252nj"> 
+				<div class="codeSection">
+					<div style="text-align: center; padding: 40px; height: 50%; font-size: 2em;">
+						Dad Jokes
+					</div>
+					
+					
+				</div>
+			</a>
+
+			<a target="_blank" href="https://codesandbox.io/embed/rjj2wvoo6o"> 
+				<div class="codeSection">
+					<div style="text-align: center; padding: 40px; height: 50%; font-size: 2em;">
+						React 
+					</div>
+					
+					
+				</div>
+			</a>
+
+		</div>
+
+			<!--
 			<p> <a href="https://codesandbox.io/embed/18202252nj"> dad jokes video (just copy and paste into your code)</a> </p>
 			<p> <a href="https://codesandbox.io/embed/rjj2wvoo6o"> react (just copy and paste into your code)</a> </p>
+			-->
 		</div>
 	</body>
 

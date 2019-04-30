@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dominator</title>
+    <!--Bootstrap stuff-->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--End of Bootstrap stuff-->
+    <link rel="stylesheet" type="text/css" href="../../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+  
+<body>
+    <h1>Created by Michael C on April 30, 2019</h1>
+    <button class="w3-btn w3-khaki" id="MilButton" name="milTime" onClick="changeMilitaryTime()" type="button">Click here to change the clock to the American Standard</button>
+    <br>
+    <div id="clockDisplay" class="clockContainer"></div>
+    <p style="color: white">Use these buttons to manipulate the time</p>
+    <input class="w3-btn w3-cyan" type="button" value=" + " onClick="addOne()"><input class="w3-btn w3-cyan" type="button" value="Reset" onClick="reset()"><input class="w3-btn w3-cyan"type="button" value="-" onClick="minusOne()">
+   <h2 style="">Current skip amount:</h2>
+    <h2 style="display: inline" id="time">0</h2>
+
+<div class="card bg-dark m-auto w-75">
+    <h5 class="card-header text-light">
+        <span class="h1 text-warning font-italic mr-2">JavaScript</span>
+        <span class="btn btn-sm btn-danger float-right">X</span>
+    </h5>
+    <div class="card-body row">
+        <div class="input-group">
+            <input type="text" class="col-2" placeholder="tagName">
+            <input type="text" class="col-10" placeholder="className">
+            <input type="text" class="col-3" placeholder="id">
+            <input type="text" class="col-6" placeholder="innerHTML">
+            <input type="text" class="col-3" placeholder="parent id">
+        </div>
+        <div class="btn-group mt-2">
+            <span class="btn btn-warning">Create New Element</span>
+            <span class="btn btn-danger">Remove Last Element</span>
+            <span class="btn btn-outline-secondary">Reset</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./index.js"></script>
+</head>
+</body>
+</html>

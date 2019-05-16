@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>John Houser</title>
+		<style>
+			body{
+				background-color: rgb(73, 215, 176);
+			}
+			.work {
+				background-color: rgb(255, 255, 255);
+				width: 50%;
+				color: black;
+				margin: auto;
+				border-radius: 5px;
+				padding: 5px;
+				text-align: left;
+			}
+		</style>
+
+	</head>
+	
+	
+  <body>
+			
+		<p> <a href="../index.html"> back </a> </p>
+			<div style="text-align: center">
+			<h1> Regular Expression Queries Explained</h1>
+			<pre class="work">
+				db.dogs.find(
+					{age:{$lt: 20}}, < -- QUERY
+					{"_id": 0, "name": 1, age: 1} <-- PROJECTION
+				)									</pre>
+			<p> Queries in mongo are composed of two main components. The actual query is what you want to find. The projection filters what information is shown to you.  </p>
+			<pre class="work">
+					{age:{$lt: 20}} < -- QUERY
+													</pre>
+			<p> The query illustrated above is a simple version. Essentially, it looks for any record that has a field, 'age', that is less than 20.</p>
+			<pre class="work">
+				{$or:[{"Pokemon":null},{"Type":"Ice"}]}
+				{$and:[{tricks:"sit"},{tricks:"roll over"}]}
+			</pre>
+			<p> This example shows a more complicated query utilizing or and and statements. The first example will return a record if either the pokemon is null or the<br> type is ice. On the other hand, the next example will return the record only if the record contains both the tricks sit and roll over.</p>
+			<pre class="work">
+				{name: /T.*$/}	
+			</pre>
+			<p> This example shows regular expressions. The slashes (/) represent a start of the reg ex sequence. This particular search will return records that contain<br> a T followed by any character. The dollar sign represents the end of a word. So essentially it looks for any word that contains a T in the name field. </p>
+
+
+
+
+		</div>   
+  </body>
+
+</html>

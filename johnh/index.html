@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>My Portfolio</title>
+		<meta http-equiv="refresh" content="3">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/domtime.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		
+	<!--
+    <link rel="stylesheet" href="css/domtime.css">
+    <script src="js/domtime.js"></script>-->
+    <style>
+			body {
+				background-color: #EEEEEE;
+				margin: 0;
+				padding: 0;
+				border: 0;
+			} 
+			#page {
+				background-color: #EEEEEE;
+				width: 100%;
+				margin: auto;
+				
+				padding: 0px;
+			}
+			#menu {
+				background-color: #EEEEEE;
+				width: 50%;
+				margin: auto;
+				
+				padding: 5px;
+			}
+
+			table {
+				background-color: white;
+				width: 50%;
+				margin: auto;
+				padding: 20px;
+				
+			}
+			
+
+			.codeSection {
+				width: 15em;
+				height: 15em;
+				background-color: white;
+				display: inline-block;
+				margin: 10px;
+				box-shadow: 0px 0px 2px grey;
+			}
+
+			.codeSection:hover {
+				box-shadow: 0px 0px 40px orange;
+				background-color: orange;
+
+			}
+
+			a:hover {
+				text-decoration: none;
+				color: black;
+				
+				
+			}
+
+			a {
+				color: black;
+				
+			}
+
+			a:visited {
+				color: black;
+				
+			}
+
+			#clockDisplay {
+				background: rgba(76, 175, 80, 0);
+				color: gray;
+				
+				display: inline;
+				padding: 0px;
+				margin: 0px;
+				padding-top: 7px;
+				font-family: "Arial", Times, serif;
+				font-style: italic;
+				font-size: 20px;
+				border-radius: 0px;
+				text-align: right; 
+				
+				float: right;
+			}
+
+		
+		</style>
+	</head>
+  <!-- onload="renderTime();"-->
+	<body onload="displaySchedule();" ><!-- //onload="startGame()"-->
+		<div id="page"> 
+			<nav class="navbar navbar-default" style="margin-bottom: 0px;" >
+				<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">My Portfolio</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Projects</a></li>
+					<!--
+					<li><a href="#">Page 1</a></li>
+					<li><a href="#">Page 2</a></li>
+					<li><a href="#">Page 3</a></li>
+					-->
+		</ul>
+		
+			<div style="" id="clockDisplay" class='container'></div>
+			
+		
+			</div>
+
+		
+		</nav>
+		<canvas id="myCanvas" style="background-color: #003366; width: 100%; margin: 0px; padding: 0px; height: 40em;">
+
+		</canvas>
+		
+			<div id="menu">
+				<a  href="pages/nodeinstall.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							Node Installation
+						</div>
+					</div>
+				</a>
+		<a  href="pages/tablejoins.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							Table Joins
+						</div>
+					</div>
+		</a>
+		<a href="pages/mongodb.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							MongoDB
+						</div>
+					</div>
+		</a>
+		<a href="pages/mongoConversion.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							Mongo Conversion
+						</div>
+					</div>
+		</a>
+		<a href="pages/final.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+				Collection 
+						</div>
+					</div>
+				</a>
+		<a  href="pages/regExQueries.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							Reg Ex Explained
+						</div>
+					</div>
+				</a>
+		<a  href="pages/regExCrossword.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							Reg Ex CrossWord
+						</div>
+					</div>
+		</a>
+		<a href="pages/mongooseSchema.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							Mongoose Schema
+						</div>
+					</div>
+		</a>
+		<a href="pages/postmanExample.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							Postman Example
+						</div>
+					</div>
+		</a>
+		<a href="pages/reactDev.html"> 
+					<div class="codeSection">
+						<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+							React Dev
+						</div>
+					</div>
+				</a>
+		<a href="pages/DOMinator/DOMinator/index.html"> 
+			<div class="codeSection">
+				<div style="text-align: center; padding: 20px; height: 50%; font-size: 1em;">
+					DOMinator
+				</div>
+			</div>
+		</a>
+			</div>
+
+			
+		</div>
+	</div>
+	<div style="background-color: #EEEEEE; width: 50%; padding: 10px; padding-bottom: 0px; height: 100%; margin: auto;">
+		<h2 style="text-align: center; margin-top: 10px; color: black;"> My Schedule</h2>
+		<table style="">
+			<tr>
+			  <th>A Day</th>
+			  <th>B Day</th> 
+			</tr>
+			<tr id="1stPeriod">
+			  <td>Spanish IV</td>
+			  <td>Adv Comp Sci</td>
+		
+			  
+			</tr>
+			<tr id="2ndPeriod">
+				<td>Intro to Fitness</td> 
+				<td>Adv Web Design & Dev</td> 
+				
+			
+			</tr>
+			<tr id="3rdPeriod">
+	
+				<td>AP English</td> 
+				<td>AP US Gov</td>
+			</tr>
+			<tr id="4thPeriod">
+				<td>AP Calc AB</td> 
+				  <td>Adv Debate</td>  
+			  
+			  </tr>
+		  </table>
+	</div>
+
+	
+
+	
+	
+	<script src="js/domtime.js"></script>
+	<script src="js/schedule.js"></script>
+    <!----><script src="js/space.js"></script>
+	</body>
+
+<html>

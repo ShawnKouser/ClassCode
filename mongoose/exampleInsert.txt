@@ -1,0 +1,4 @@
+db.book.insertMany([
+	{"title":"The Theory of Evolution","author":"Charles Darwin","category":"Biology"}
+	
+]);

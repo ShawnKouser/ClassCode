@@ -1,0 +1,164 @@
+------------------------ GENERAL NOTES -----------------------
+
+// finding
+
+locate WiredTiger
+locate WiredTiger$ --regex
+
+
+------------------------ MONGO NOTES --------------------------
+
+// examples of mongo
+
+show dbs;
+use animals;
+db.createCollection("dog");
+show collections;
+db.dogs.insertOne({"name": "Gambit", "age": 9, "tricks": ["sit", "fetch", "roll over"]})
+db.dogs.insertOne({"name": "Chico", "age": 14, "tricks": ["sit, "fetch", "play dead", "shake a paw"]})
+db.dogs.find()
+db.dogs.find().pretty()
+db.dogs.findOne({"name": "Gambit"})
+
+db.dogs.insertMany([
+	{"name":"Coco","age":19,"tricks":null}
+	,{"name":"Tigger","age":10,"tricks":["Shake a Paw", "roll over"]}
+])
+
+// finding 
+db.dogs.find({tricks:null})
+db.dogs.findOne -- finds only one and stops
+
+
+// mongo import
+mongoimport --host localhost --db animals --collection dogs --file /home/compsci/json/animalsArray.json --jsonArray
+
+// projection
+db.dogs.findOne({}, {"_id": 0, "Type": 1, "Hex": true})
+db.dogs.find({}, {"_id": 0, "name": 1})
+db.dogs.find({age:{$lt: 20}}, {"_id": 0, "name": 1, age: 1})
+
+// or statement
+db.dogs.find({
+	$or:[{"Pokemon":null},{"Type":"Ice"}]
+})
+
+db.dogs.find(
+	{$or:[{name:"Sam"}, {age:3}]},
+	{_id:0,name:1,age:1}
+	)
+{"name":"Sam","age":3}
+
+
+//regex
+db.dogs.find({name: /T.*$/});
+db.dogs.find({"age":{$gte:5, $lte:10}})
+db.dogs.find({"tricks":
+
+
+//updating
+db.dogs.updateOne({"Code":"Ice"},{$set:{"Hex":"000000"}})
+db.dogs.updateOne({name:"Woofie",{$set:{"tricks":["sit"]}}
+db.dogs.updateMany({:},{$set:{:})
+
+
+//quiz
+db.dogs.insertMany([
+	{"name":"Coco","age":19,"tricks":null}
+	,{"name":"Woofie","age":10,"tricks": null}
+	,{"name":"Pumpkin","age":10,"tricks": null}
+	,{"name":"Pookie","age":10,"tricks": null}
+])
+
+db.dogs.updateOne({name:"Woofie"},{$set:{age:3,tricks:["sit","roll over"]}})
+
+db.dogs.updateOne({name:"Gambit"},{$push:{tricks:"speak"}})
+
+db.dogs.find({$and:[{tricks:"sit"},{tricks:"roll over"}]},{'_id': 0,name:1,tricks:1})
+
+
+db.dogs.find({$and:[{tricks:"sit"},{age: {$lt: 9}} ]},{'_id': 0,name:1,tricks:1,age: 1})
+
+
+---------------- MONGOOSE
+
+
+'use strict';
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var BookSchema = new Schema({
+	title:String,
+	title:{
+		type:String,
+		required:true,
+		unique:true
+	}
+	keywords: Array,
+	published: Boolean,
+	author: {
+		type: Schema.ObjectId,
+		ref: 'User'
+	},
+	detail: {
+		modelNumber: Number,
+		hardcover: Boolean,
+		reviews: Number,
+		rank: Number
+	}
+})	
+var BookSchema = new Schema({
+	title:String,
+	published:{
+		type:Date,
+		default: Date.now
+	},
+	keywords: Array,
+	published: Boolean,
+	author: {
+		type: Schema.ObjectId,
+		ref: 'User'
+	},
+	detail: {
+		modelNumber: Number,
+		hardcover: Boolean,
+		reviews: Number,
+		rank: Number
+	|
+})	
+module.exports = mongoose.model('Book',BookSchema);
+
+
+-- from video
+var express = require('express');
+var app = express();
+var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var Book = require("./Book.model");
+var port = 8080;
+var db = "mongodb://localhost/example;"
+
+mongoose.connect(db);
+
+app.get('/', function(req, res) {
+	res.send('happy to be here');
+	
+});
+
+app.get("/book", function(req, res) {
+	console.log("getting all books");
+	Book.find({})
+		.exec(function(err,books){
+			if(err) {
+				res.send('error has occured');
+			} else {
+				console.log(books);
+				res.json(books);
+			}
+		}
+
+});
+
+app.listen(port, function() {
+	console.log('app listening on port ' + port);
+});

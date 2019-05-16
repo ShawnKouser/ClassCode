@@ -1,0 +1,16 @@
+#clockDisplay {
+    background: rgba(76, 175, 80, 0);
+    color: gray;
+    
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 40px;
+    border-radius: 0px;
+    text-align: center; 
+    padding: 0; 
+    margin: 0;
+    float: right;
+}

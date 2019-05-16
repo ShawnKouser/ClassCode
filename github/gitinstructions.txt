@@ -1,0 +1,4 @@
+git clone link
+
+
+git remote add origin *link*

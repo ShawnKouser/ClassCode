@@ -1,4 +1,20 @@
-git clone link
+git clone *link*
 
+git status
 
 git remote add origin *link*
+
+1. git install
+2. $git init
+	- show .git file
+3. $git config --global
+	< user.name >
+	< user.email >
+   $git config --get
+4. $git statue
+5. $touch .gitignore
+6. $git add -A
+7. $git commit -m "short message"
+8. $git remote add origin < GitHub URL >
+9.   
+
